@@ -44,7 +44,7 @@ export function GithubLink({ href }: { href: string }) {
   return (
     <ActionLink href={href} variant="solid">
       <Github className="h-4 w-4" aria-hidden="true" />
-      View on GitHub
+      Ver en GitHub
     </ActionLink>
   );
 }
