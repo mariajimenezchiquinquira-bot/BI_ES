@@ -131,3 +131,36 @@ Cada card tiene un botón que abre un PDF de análisis más profundo (3 páginas
 
 ### ⚠️ Lección aprendida: archivos hardlinkeados en este proyecto
 Varias veces `device_commit_files` reportó `"written"` exitosamente pero el archivo en el computador de la usuaria NO se actualizó (se quedó con el contenido viejo) — pasó tanto con PDFs como con `index.tsx`. La causa: los archivos están hardlinkeados (`nlink > 1`, probablemente por git o por OneDrive), y sobreescribir "in place" no siempre rompe el link correctamente sin `force: true`. **Protocolo a seguir de ahora en adelante:** después de cualquier `device_commit_files`, verificar con `device_stage_files` que el contenido nuevo realmente llegó (o pedirle a la usuaria que confirme con `git status` / abriendo el archivo) ANTES de decir que el cambio está listo — no asumir que "written" en la respuesta del tool significa que el archivo cambió de verdad.
+
+## ⚠️ Existe un CUARTO proyecto: `portfolio-bi-es` (versión en español de `portfolio-bi`)
+
+| Carpeta | Repo GitHub | URL en vivo |
+|---|---|---|
+| `portfolio-bi-es` | `BI_ES` (`mariajimenezchiquinquira-bot/BI_ES`) | proyecto en Vercel llamado `portfolio-bi-es` |
+
+Creado copiando `portfolio-bi` completo (excluyendo `node_modules`, `.git`, `.lovable`) y traduciendo todo el contenido al español. **Nota:** la copia inicial con `robocopy` generó hardlinks en vez de copias independientes (mismo problema que la sección anterior, pero a nivel de sistema de archivos de Windows, no de `device_commit_files`) — hubo que borrar la carpeta y volver a copiar con `Copy-Item -Recurse` en PowerShell para obtener archivos realmente independientes. Si se necesita clonar este patrón para un futuro portafolio "-es", usar `Copy-Item`, no `robocopy`.
+
+### Cambios de contenido respecto a `portfolio-bi` (inglés)
+- Todo `src/routes/index.tsx` traducido al español (título, meta SEO, perfil, nombres de proyectos, bloques Problema/Enfoque/Resultado, alt text de imágenes, lista de `SKILLS`).
+- Encabezado del hero: se quitó "Business Intelligence Emphasis", queda solo "Estudiante de Ingeniería Industrial" (mismo cambio aplicado en los otros 3 portafolios en esa misma sesión).
+- Botón "View on GitHub" → "Ver en GitHub" (traducido en `src/components/portfolio/ProjectCard.tsx` — **solo en la copia de este proyecto**, no afecta a `portfolio-bi` ni a los demás, porque cada proyecto tiene su propia copia del componente).
+- Encabezado de sección "Habilidades" se cambió a **"Skills"** por preferencia explícita de la usuaria (inconsistencia intencional: el resto de la sección/página sigue en español, pero ese título específico se dejó en inglés).
+- Se quitó "Notion" y "Jira" del array `SKILLS` (ya se habían quitado antes del CV de BI y del `portfolio-bi` en inglés, por no ser herramientas realmente usadas en el día a día — se replicó la misma decisión aquí para mantener consistencia entre el CV de BI y ambos portafolios de BI).
+
+### Imágenes reemplazadas por versiones en español
+Todas en `src/assets/projects/`, mismo nombre de archivo que en `portfolio-bi` (inglés), contenido reemplazado por gráficas re-generadas con textos/etiquetas en español:
+- `wework-timeline.png`, `wework-losses-donut.png`, `wework-valuation.png`
+- `budlight-ranking.png`, `budlight-market-share.png`, `budlight-sales-volume.png`
+- `churn-capital-loss-dashboard-v2.png` (dashboard de Power BI, screenshot en español)
+
+**Nota sobre un bug intermitente:** en una ronda de subida, 2 de las 3 imágenes de Bud Light aparecieron rotas en el sitio en vivo (ícono de imagen no cargada) mientras la tercera sí se veía bien, a pesar de que `git log`/`git status` confirmaban que los 3 archivos estaban correctamente commiteados y pusheados con tamaños razonables. Se resolvió re-escribiendo y re-commiteando los 3 archivos con `force: true` — probablemente fue un problema de caché del CDN de Vercel/navegador que no se invalidó bien tras el primer deploy, no un problema real de los archivos ni del código. Si vuelve a pasar: forzar un nuevo commit de las imágenes afectadas (aunque el contenido sea el mismo) y probar en ventana de incógnito antes de investigar más a fondo.
+
+### PDFs reemplazados
+- `public/docs/WeWork_Case_Study_Analysis.pdf` → versión en español ("WeWork: Análisis de Caso").
+- `public/docs/BudLight_Case_Study_Analysis.pdf` → versión en español ("Bud Light: Análisis de Caso").
+- Mismo nombre de archivo que en `portfolio-bi` (inglés) — solo cambia el contenido/idioma del PDF.
+
+### Notebook y galería de segmentación de tarjetas (esto se hizo en `portfolio-data-analysis-es`, no en `portfolio-bi-es`)
+Aunque relacionado, este cambio fue en el proyecto `portfolio-data-analysis-es`, no en `portfolio-bi-es` (que ya no tiene esa sección — ver nota arriba de que se quitó "Customer Segmentation" de `portfolio-bi`). Se documenta aquí por si en el futuro se vuelve a agregar esa sección a `portfolio-bi-es`:
+- Se reemplazó `public/ConsumoTarjetasCredito.html` (notebook exportado) por una versión en español subida por la usuaria.
+- El notebook en español traía 8 gráficas; se usaron solo las 6 que ya estaban en la galería (se decidió no agregar las 2 extra — "Distribución de Clientes por Cluster" y "Gasto por Momento del Día" — para no cambiar el diseño existente).
