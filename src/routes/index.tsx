@@ -5,11 +5,16 @@ import {
   DocsLink,
   GithubLink,
   ProjectCard,
+  TableauLink,
 } from "@/components/portfolio/ProjectCard";
 import { ProjectImageGrid } from "@/components/portfolio/ImagePlaceholder";
 import weworkValuation from "@/assets/projects/wework-valuation.png";
 import weworkTimeline from "@/assets/projects/wework-timeline.png";
 import weworkLossesDonut from "@/assets/projects/wework-losses-donut.png";
+import payraSplitJiraBoard from "@/assets/projects/payrasplit-jira-board.png";
+import payraSplitNotionCover from "@/assets/projects/payrasplit-notion-cover.png";
+import payraSplitNotionTimelineBacklog from "@/assets/projects/payrasplit-notion-timeline-backlog.png";
+import payraSplitTableau from "@/assets/projects/payrasplit-tableau-dashboard.png";
 import churnDashboard from "@/assets/projects/churn-capital-loss-dashboard-v2.png";
 
 export const Route = createFileRoute("/")({
@@ -161,6 +166,70 @@ function Index() {
                     className="max-h-[220px] w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
                   />
                 </a>
+              </div>
+            </ProjectCard>
+
+            <ProjectCard
+              title="Payra Split — Función de Pagos Compartidos"
+              tech={["Notion", "Jira", "Tableau", "Scrum"]}
+              actions={
+                <TableauLink href="https://public.tableau.com/app/profile/maria.jimenez7845/viz/PayraSplit_DashboardTableauES/Dashboard1" />
+              }
+            >
+              <CardBlock label="Problema">
+                Dividir gastos compartidos puede ser un dolor de cabeza. Cuando una persona paga por
+                todos, las cuentas se complican, o cuando Laura pagó la comida y Felipe las cervezas,
+                hay que cruzar cuentas, saber quién le debe a quién, y al final es todo un rollo.
+              </CardBlock>
+              <CardBlock label="Solución">
+                "Payra Split", una función que permite a los usuarios de Payra, dividir gastos al
+                instante y ver quién ya pagó. A continuación se muestra un overview del proceso de
+                planificación, ejecución y seguimiento del producto. Se utilizó Notion para
+                planificar el producto, Jira para gestionar la ejecución de cada fase mediante
+                sprints y tareas, y Tableau para analizar las tasas de adopción y uso después del
+                lanzamiento.
+              </CardBlock>
+              <CardBlock label="Resultado">
+                Una experiencia más simple para dividir gastos, hacer seguimiento a los pagos y
+                saber quién debe a quién, con métricas de adopción y uso para evaluar el desempeño
+                de la función.
+              </CardBlock>
+              <div className="flex flex-col gap-4">
+                <div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-card-foreground/50">
+                    Notion — Planificación de Producto
+                  </p>
+                  <ProjectImageGrid
+                    images={[
+                      { src: payraSplitNotionCover, alt: "Resumen del roadmap de Payra Split en Notion" },
+                      { src: payraSplitNotionTimelineBacklog, alt: "Cronograma y backlog de Payra Split en Notion" },
+                    ]}
+                  />
+                </div>
+                <div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-card-foreground/50">
+                    Jira — Ejecución de Sprints
+                  </p>
+                  <div className="mx-auto w-full max-w-2xl">
+                    <ProjectImageGrid
+                      images={[
+                        { src: payraSplitJiraBoard, alt: "Tablero Scrum de Payra Split en Jira" },
+                      ]}
+                      columns={1}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-card-foreground/50">
+                    Tableau — Dashboard de Adopción
+                  </p>
+                  <ProjectImageGrid
+                    images={[
+                      { src: payraSplitTableau, alt: "Dashboard de uso y adopción de Payra Split en Tableau" },
+                    ]}
+                    columns={1}
+                  />
+                </div>
               </div>
             </ProjectCard>
 
