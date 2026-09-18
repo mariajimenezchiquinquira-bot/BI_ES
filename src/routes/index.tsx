@@ -10,9 +10,6 @@ import { ProjectImageGrid } from "@/components/portfolio/ImagePlaceholder";
 import weworkValuation from "@/assets/projects/wework-valuation.png";
 import weworkTimeline from "@/assets/projects/wework-timeline.png";
 import weworkLossesDonut from "@/assets/projects/wework-losses-donut.png";
-import budlightRanking from "@/assets/projects/budlight-ranking.png";
-import budlightMarketShare from "@/assets/projects/budlight-market-share.png";
-import budlightSalesVolume from "@/assets/projects/budlight-sales-volume.png";
 import churnDashboard from "@/assets/projects/churn-capital-loss-dashboard-v2.png";
 
 export const Route = createFileRoute("/")({
@@ -168,39 +165,6 @@ function Index() {
             </ProjectCard>
 
             <ProjectCard
-              title="Bud Light / AB InBev: El Costo de una Decisión de Marketing"
-              tech={["Caso de Negocio", "Análisis Estratégico", "Business Understanding"]}
-              actions={
-                <DocsLink href="/docs/BudLight_Case_Study_Analysis.pdf" label="Ver Análisis Completo" />
-              }
-            >
-              <CardBlock label="Problema">
-                A comienzos de 2023, Bud Light era la cerveza más vendida en Estados Unidos. Una
-                campaña de marketing generó un fuerte rechazo público que afectó las ventas y el
-                posicionamiento de la marca, costándole a AB InBev más de $1.000 millones en
-                pérdidas.
-              </CardBlock>
-              <CardBlock label="Enfoque">
-                Analicé la decisión de marketing, la respuesta de gestión de crisis y su impacto
-                en ventas, participación de mercado y valor de marca.
-              </CardBlock>
-              <CardBlock label="Resultado">
-                Bud Light cayó del puesto #1 al #3, mientras que el volumen de ventas cayó casi
-                un 30% interanual. El caso mostró que una comunicación poco clara y una respuesta
-                de crisis inconsistente pueden amplificar el impacto de una controversia y
-                erosionar la posición competitiva de una marca.
-              </CardBlock>
-              <ProjectImageGrid
-                columns={3}
-                images={[
-                  { src: budlightRanking, alt: "Ranking de marcas de cerveza en EE. UU. antes y después del boicot de 2023" },
-                  { src: budlightMarketShare, alt: "Participación de mercado de cerveza en EE. UU. por marca en 2024" },
-                  { src: budlightSalesVolume, alt: "Volumen de ventas de Bud Light antes y después del boicot" },
-                ]}
-              />
-            </ProjectCard>
-
-            <ProjectCard
               title="Análisis de Fuga de Clientes y Pérdida de Capital"
               tech={["Power BI", "DAX", "Visualización de Datos"]}
               actions={
@@ -245,7 +209,7 @@ function Index() {
             id="skills"
             className="relative text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl"
           >
-            Skills
+            Skills & Tools
             <span className="mt-2 block h-1 w-14 rounded-full bg-primary" aria-hidden="true" />
           </h2>
           <ul className="relative mt-8 flex flex-wrap gap-2">
@@ -263,7 +227,7 @@ function Index() {
 
       <footer className="border-t border-border bg-secondary/50">
         <div className="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-muted-foreground">© 2026 María José Jiménez</p>
+          <p className="text-sm text-muted-foreground">© María José Jiménez</p>
           <div className="flex gap-5">
             <a
               href="https://www.linkedin.com/in/mariajosejimenez-ingenieraindustrial/"
