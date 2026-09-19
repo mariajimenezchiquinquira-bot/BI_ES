@@ -164,3 +164,13 @@ Todas en `src/assets/projects/`, mismo nombre de archivo que en `portfolio-bi` (
 Aunque relacionado, este cambio fue en el proyecto `portfolio-data-analysis-es`, no en `portfolio-bi-es` (que ya no tiene esa sección — ver nota arriba de que se quitó "Customer Segmentation" de `portfolio-bi`). Se documenta aquí por si en el futuro se vuelve a agregar esa sección a `portfolio-bi-es`:
 - Se reemplazó `public/ConsumoTarjetasCredito.html` (notebook exportado) por una versión en español subida por la usuaria.
 - El notebook en español traía 8 gráficas; se usaron solo las 6 que ya estaban en la galería (se decidió no agregar las 2 extra — "Distribución de Clientes por Cluster" y "Gasto por Momento del Día" — para no cambiar el diseño existente).
+
+## Limpieza de archivos sueltos en `portfolio-bi-es` (sesión posterior)
+
+Se revisó qué assets en `src/assets/projects/`, `public/docs/` y `public/` ya no estaban referenciados en `src/routes/index.tsx` (quedaron de secciones removidas: Bud Light, Nu Split, Customer Segmentation, Vehicle Contract Automation) y se eliminaron:
+
+- Imágenes: `budlight-market-share.png`, `budlight-ranking.png`, `budlight-sales-volume.png`, `nusplit-jira-board.png`, `nusplit-notion-cover.png`, `nusplit-notion-timeline-backlog.png`, `nusplit-tableau-dashboard.png`, `segmentation-2-domestic-vs-international.png`, `segmentation-4-dominant-category.png`, `segmentation-5-elbow-method.png`, `segmentation-6-avg-transaction-by-cluster.png`, `segmentation-card-franchise.png`, `segmentation-weekday-heatmap.png`, `n8n-confirmation-message.png`, `n8n-flow-diagram.png`, `n8n-sheets.png`.
+- `public/docs/vehicle-contract-automation-technical-documentation.pdf`.
+- `public/ConsumoTarjetasCredito.html`.
+
+Assets que quedaron (sí están en uso): `churn-capital-loss-dashboard-v2.png`, las 4 imágenes de `payrasplit-*.png`, las 3 de `wework-*.png`, y los PDFs `WeWork_Case_Study_Analysis.pdf` y `BudLight_Case_Study_Analysis.pdf`.
