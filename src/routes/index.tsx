@@ -101,30 +101,28 @@ function Index() {
           </h2>
           <div className="mt-8 grid gap-6">
             <ProjectCard
-              title="WeWork: El Colapso Estratégico de un Modelo de Negocio de $47.000M"
-              tech={["Caso de Negocio", "Análisis Estratégico", "Business Understanding"]}
+              title="WeWork — El Colapso de un Negocio de USD 47.000M"
+              tech={["Business Intelligence", "Data Analytics", "Data Visualization"]}
               actions={
                 <DocsLink href="/docs/WeWork_Case_Study_Analysis.pdf" label="Ver Análisis Completo" />
               }
             >
               <CardBlock label="Problema">
-                WeWork alcanzó una valoración de $47.000 millones en enero de 2019, pero se
-                declaró en bancarrota en noviembre de 2023. Su modelo dependía de compromisos de
-                arrendamiento a largo plazo mientras generaba ingresos mediante membresías
-                flexibles de corto plazo, creando una exposición financiera significativa cuando
-                la demanda se debilitó. ¿Qué decisiones estratégicas impulsaron este colapso?
+                WeWork alcanzó una valoración de USD 47.000M en 2019, pero terminó en bancarrota
+                en 2023. El reto fue entender, desde los datos, qué factores llevaron al
+                deterioro financiero del negocio.
               </CardBlock>
-              <CardBlock label="Enfoque">
-                Analicé su modelo de arrendamiento a largo plazo y subarriendo flexible, la
-                cultura de gasto bajo el liderazgo de Adam Neumann, y las fallas de gobernanza
-                previas al IPO de 2019. El análisis se enfocó en la relación entre la expansión
-                agresiva, la sostenibilidad financiera y la gestión de riesgo.
+              <CardBlock label="Solución">
+                Analicé indicadores financieros y operativos como ingresos, pérdidas, deuda y
+                estructura de costos, y los convertí en visualizaciones para identificar
+                tendencias y relaciones. El análisis conectó estos datos con el modelo de negocio
+                y su estrategia de expansión.
               </CardBlock>
               <CardBlock label="Resultado">
-                WeWork pasó de $47.000 millones a la bancarrota, acumulando $11.400 millones en
-                pérdidas netas entre 2020 y mediados de 2023. El colapso fue impulsado por un
-                desajuste estructural de riesgo, una expansión sin rentabilidad comprobada y una
-                gobernanza débil.
+                El análisis permitió identificar cómo el crecimiento acelerado, los altos
+                compromisos de arrendamiento y una estructura de costos difícil de sostener
+                afectaron la viabilidad del negocio. WeWork acumuló USD 11.400M en pérdidas
+                netas entre 2020 y mediados de 2023.
               </CardBlock>
               <div className="grid gap-3 sm:grid-cols-[1.5fr_1fr_1fr]">
                 <a
