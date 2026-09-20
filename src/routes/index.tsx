@@ -101,8 +101,8 @@ function Index() {
           </h2>
           <div className="mt-8 grid gap-6">
             <ProjectCard
-              title="WeWork — Crecimiento, riesgo y sostenibilidad de un negocio de USD 47.000M"
-              tech={["Business Intelligence", "Business Strategy", "Financial Analysis", "Data Visualization"]}
+              title="WeWork — Business Case"
+              tech={["Business Intelligence", "Business Strategy", "Financial Analysis"]}
               actions={
                 <DocsLink href="/docs/WeWork_Case_Study_Analysis.html" label="Ver Análisis Completo" />
               }
