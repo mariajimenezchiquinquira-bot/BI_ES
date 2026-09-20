@@ -101,28 +101,38 @@ function Index() {
           </h2>
           <div className="mt-8 grid gap-6">
             <ProjectCard
-              title="WeWork — El Colapso de un Negocio de USD 47.000M"
-              tech={["Business Intelligence", "Data Analytics", "Data Visualization"]}
+              title="WeWork — Crecimiento, riesgo y sostenibilidad de un negocio de USD 47.000M"
+              tech={["Business Intelligence", "Business Strategy", "Financial Analysis", "Data Visualization"]}
               actions={
                 <DocsLink href="/docs/WeWork_Case_Study_Analysis.html" label="Ver Análisis Completo" />
               }
             >
               <CardBlock label="Problema">
-                WeWork alcanzó una valoración de USD 47.000M en 2019, pero terminó en bancarrota
-                en 2023. El reto fue entender, desde los datos, qué factores llevaron al
-                deterioro financiero del negocio.
+                WeWork alcanzó una valoración de USD 47.000M en 2019, pero terminó
+                declarándose en bancarrota en 2023. El reto fue utilizar información
+                financiera y operativa para entender qué había detrás de ese crecimiento y qué
+                señales podían indicar riesgos para la sostenibilidad del negocio.
               </CardBlock>
-              <CardBlock label="Solución">
-                Analicé indicadores financieros y operativos como ingresos, pérdidas, deuda y
-                estructura de costos, y los convertí en visualizaciones para identificar
-                tendencias y relaciones. El análisis conectó estos datos con el modelo de negocio
-                y su estrategia de expansión.
+              <CardBlock label="Análisis">
+                Analicé la evolución de ingresos, pérdidas, costos, pasivos, patrimonio y
+                compromisos financieros, y conecté estos indicadores con el modelo de negocio y
+                la estrategia de expansión de la compañía. El objetivo no fue solo identificar
+                qué estaba ocurriendo en los estados financieros, sino entender qué decisiones y
+                características del modelo estaban generando esos resultados.
               </CardBlock>
-              <CardBlock label="Resultado">
-                El análisis permitió identificar cómo el crecimiento acelerado, los altos
-                compromisos de arrendamiento y una estructura de costos difícil de sostener
-                afectaron la viabilidad del negocio. WeWork acumuló USD 11.400M en pérdidas
-                netas entre 2020 y mediados de 2023.
+              <CardBlock label="Insight">
+                El análisis mostró que el crecimiento de WeWork venía acompañado de una
+                estructura financiera cada vez más exigente: los ingresos aumentaban, pero la
+                compañía mantenía pérdidas significativas mientras acumulaba compromisos de
+                largo plazo y mayores obligaciones financieras. Esto permitió identificar una
+                brecha entre el crecimiento del negocio y la capacidad de sostener
+                financieramente ese crecimiento.
+              </CardBlock>
+              <CardBlock label="Valor para la toma de decisiones">
+                El proyecto demuestra cómo Business Intelligence puede ir más allá del
+                seguimiento de indicadores para conectar datos financieros con decisiones
+                estratégicas, identificar riesgos y evaluar si el crecimiento de un negocio es
+                realmente sostenible.
               </CardBlock>
               <div className="grid gap-3 sm:grid-cols-[1.5fr_1fr_1fr]">
                 <a
