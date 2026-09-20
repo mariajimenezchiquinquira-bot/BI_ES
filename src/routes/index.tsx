@@ -109,28 +109,21 @@ function Index() {
                 WeWork alcanzó una valoración de USD 47.000M en 2019, pero terminó
                 declarándose en bancarrota en 2023. El reto fue utilizar información
                 financiera y operativa para entender qué había detrás de ese crecimiento y qué
-                señales podían indicar riesgos para la sostenibilidad del negocio.
+                señales indicaban riesgos para la sostenibilidad del negocio.
               </CardBlock>
               <CardBlock label="Análisis">
                 Analicé la evolución de ingresos, pérdidas, costos, pasivos, patrimonio y
-                compromisos financieros, y conecté estos indicadores con el modelo de negocio y
-                la estrategia de expansión de la compañía. El objetivo no fue solo identificar
-                qué estaba ocurriendo en los estados financieros, sino entender qué decisiones y
-                características del modelo estaban generando esos resultados.
+                compromisos financieros, conectando estos indicadores con el modelo de negocio y
+                la estrategia de expansión. El objetivo fue entender no solo qué estaba
+                ocurriendo, sino qué características del modelo y qué decisiones estaban
+                generando esos resultados.
               </CardBlock>
               <CardBlock label="Insight">
-                El análisis mostró que el crecimiento de WeWork venía acompañado de una
-                estructura financiera cada vez más exigente: los ingresos aumentaban, pero la
-                compañía mantenía pérdidas significativas mientras acumulaba compromisos de
-                largo plazo y mayores obligaciones financieras. Esto permitió identificar una
-                brecha entre el crecimiento del negocio y la capacidad de sostener
-                financieramente ese crecimiento.
-              </CardBlock>
-              <CardBlock label="Valor para la toma de decisiones">
-                El proyecto demuestra cómo Business Intelligence puede ir más allá del
-                seguimiento de indicadores para conectar datos financieros con decisiones
-                estratégicas, identificar riesgos y evaluar si el crecimiento de un negocio es
-                realmente sostenible.
+                El crecimiento de WeWork estuvo acompañado de pérdidas significativas, mayores
+                obligaciones financieras y compromisos de largo plazo, evidenciando una brecha
+                entre el crecimiento del negocio y su capacidad para sostenerlo financieramente.
+                El análisis permitió identificar cómo los datos financieros podían revelar
+                riesgos estratégicos y de sostenibilidad del negocio.
               </CardBlock>
               <a
                 href={weworkDashboardOverview}
