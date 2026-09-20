@@ -174,3 +174,31 @@ Se revisó qué assets en `src/assets/projects/`, `public/docs/` y `public/` ya 
 - `public/ConsumoTarjetasCredito.html`.
 
 Assets que quedaron (sí están en uso): `churn-capital-loss-dashboard-v2.png`, las 4 imágenes de `payrasplit-*.png`, las 3 de `wework-*.png`, y los PDFs `WeWork_Case_Study_Analysis.pdf` y `BudLight_Case_Study_Analysis.pdf`.
+
+## Actualización de contenido — proyecto WeWork y footer (sept 2026)
+
+### Footer
+- "Skills" → "Skills & Tools".
+- Línea de copyright simplificada: "© 2026 María José Jiménez" → "© María José Jiménez".
+
+### Proyecto Bud Light
+- Se eliminó por completo la card del proyecto Bud Light/AB InBev (incluyendo sus imports de imágenes ya no usados).
+
+### Proyecto Payra Split (nuevo)
+- Se agregó la card de Payra Split, copiada de `portfolio-product-es`, ubicada justo debajo de la card de WeWork.
+- Se agregaron 4 imágenes nuevas: `payrasplit-jira-board.png`, `payrasplit-notion-cover.png`, `payrasplit-notion-timeline-backlog.png`, `payrasplit-tableau-dashboard.png`.
+
+### Proyecto "Análisis de Fuga de Clientes y Pérdida de Capital"
+- Título actualizado a "Análisis — Fuga de Clientes y Pérdida de Capital".
+- Texto de Problema/Enfoque/Resultados reescrito con la nueva redacción proporcionada por la usuaria.
+
+### Proyecto WeWork (varias rondas de ajuste en la misma sesión)
+- Título final: **"WeWork — Business Case"**.
+- Tags finales: `Business Intelligence`, `Business Strategy`, `Financial Analysis`.
+- Estructura de texto final: **Problema / Análisis / Insight** (se probaron versiones intermedias con Enfoque/Resultado y con un bloque extra de "Valor para la toma de decisiones", pero se descartaron a favor de esta versión más simple).
+- Botón "Ver análisis completo" (`DocsLink`): se reemplazó el archivo enlazado de PDF a HTML — ahora apunta a `public/docs/WeWork_Case_Study_Analysis.html` (documento autocontenido con gráficas SVG, en español).
+- Imágenes: se reemplazaron las 3 gráficas individuales (`wework-timeline.png`, `wework-valuation.png`, `wework-losses-donut.png`) por una sola imagen de dashboard combinado, `wework-dashboard-overview.png`, con layout de una sola imagen centrada (en vez del grid de 3 columnas). Los 3 archivos antiguos se eliminaron de `src/assets/projects/`.
+- Esta imagen de dashboard se volvió a reemplazar dos veces más en la misma sesión a medida que la usuaria refinó el screenshot; en un intento intermedio se subió por error la versión en inglés (destinada a `portfolio-bi`) — se corrigió verificando el contenido real del archivo en el dispositivo antes de confirmar el cambio como terminado.
+
+### Lección reforzada
+- `device_commit_files` puede reportar éxito ("written") sin que el contenido real en el dispositivo de la usuaria coincida con el archivo fuente, especialmente al reutilizar el mismo nombre de archivo (`wework-dashboard-overview.png`) entre `portfolio-bi` y `portfolio-bi-es`. Protocolo: después de cada escritura de imagen, volver a leer el archivo desde el dispositivo (`device_stage_files` + inspección visual) antes de dar el cambio por confirmado, y si persiste, usar `fileUuid` en vez de `stagedPath` y/o cambiar el nombre del archivo staged para evitar colisiones de caché.
