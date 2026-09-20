@@ -104,7 +104,7 @@ function Index() {
               title="WeWork — El Colapso de un Negocio de USD 47.000M"
               tech={["Business Intelligence", "Data Analytics", "Data Visualization"]}
               actions={
-                <DocsLink href="/docs/WeWork_Case_Study_Analysis.pdf" label="Ver Análisis Completo" />
+                <DocsLink href="/docs/WeWork_Case_Study_Analysis.html" label="Ver Análisis Completo" />
               }
             >
               <CardBlock label="Problema">
